@@ -1,0 +1,502 @@
+patient_id,cycle_number,Age,Protocol,AMH,n_Follicles,E2_day5,AFC,Patient Response
+25001,1,37.0,flexible antagonist,1.87,16.0,930.13,,high
+25002,2,24.0,fixed antagonist,1.18,5.0,1974.21,,low
+25003,1,32.0,fixed antagonist,1.35,5.0,846.31,,low
+25004,1,24.0,flexible antagonist,1.81,18.0,351.81,17.0,optimal
+25005,2,24.0,flexible antagonist,1.04,9.0,606.7,8.0,low
+25006,1,42.0,fixed antagonist,4.36,24.0,3971.0,9.0,optimal
+25007,3,30.0,agonist,5.31,30.0,3638.0,,high
+25008,3,36.0,flexible antagonist,2.73,26.0,541.02,,optimal
+25009,1,29.0,flexible antagonist,5.62,,689.82,17.0,high
+25010,1,24.0,agonist,1.31,10.0,637.03,4.0,low
+25011,3,26.0,flexible antagonist,1.53,7.0,908.71,6.0,low
+25012,1,37.0,agonist,2.74,17.0,584.49,9.0,optimal
+25013,2,30.0,fixed antagonist,1.73,16.0,394.12,20.0,high
+25014,2,29.0,flexible antagonist,1.61,18.0,701.07,,optimal
+25015,1,29.0,flexible antagonist,2.38,15.0,543.59,,optimal
+25016,1,34.0,flexible antagonist,2.82,33.0,487.18,,high
+25017,3,37.0,flexible antagonist,0.76,9.0,522.01,,optimal
+25018,2,36.0,fixed antagonist,1.02,2.0,480.2,8.0,low
+25019,1,27.0,flexible antagonist,0.63,8.0,1084.54,13.0,optimal
+25020,1,35.0,fixed antagonist,2.63,16.0,306.63,,optimal
+25021,1,29.0,flexible antagonist,2.55,17.0,808.27,,optimal
+25022,1,31.0,flexible antagonist,,8.0,338.94,14.0,optimal
+25023,2,25.0,flexible antagonist,2.11,16.0,923.42,9.0,optimal
+25024,1,34.0,flexible antagonist,2.71,24.0,673.88,16.0,optimal
+25025,1,30.0,flexible antagonist,1.06,,64.47,5.0,low
+25026,2,40.0,flexible antagonist,0.18,4.0,250.4,6.0,low
+25027,2,30.0,fixed antagonist,3.82,26.0,,22.0,high
+25028,1,26.0,flexible antagonist,2.2,14.0,876.28,,optimal
+25029,1,30.0,agonist,2.76,17.0,195.74,15.0,optimal
+25030,3,24.0,flexible antagonist,4.86,36.0,923.5,,high
+25004,1,36.0,fixed antagonist,2.86,,1246.56,25.0,high
+25024,2,28.0,flexible antagonist,1.06,12.0,557.23,,low
+25031,1,29.0,agonist,1.57,7.0,845.95,10.0,optimal
+25032,2,32.0,fixed antagonist,1.4,8.0,242.95,,low
+25033,1,39.0,fixed antagonist,6.04,41.0,563.64,16.0,high
+25034,2,31.0,agonist,4.0,24.0,1230.57,21.0,high
+25035,1,35.0,fixed antagonist,3.9,29.0,579.55,,high
+25036,1,31.0,agonist,,13.0,,12.0,optimal
+25037,1,27.0,flexible antagonist,1.13,,4992.0,13.0,optimal
+25038,2,42.0,agonist,0.43,6.0,,8.0,low
+25039,1,30.0,flexible antagonist,3.23,22.0,687.52,16.0,optimal
+25040,1,,agonist,3.04,11.0,573.81,16.0,optimal
+25041,1,30.0,flexible antagonist,4.82,34.0,549.64,,high
+25042,1,30.0,flexible antagonist,,16.0,273.05,16.0,optimal
+25043,1,37.0,fixed antagonist,0.8,5.0,1491.08,,low
+25044,3,37.0,flexible antagonist,3.36,22.0,1344.88,,optimal
+25045,2,36.0,agonist,0.76,11.0,608.8,,low
+25046,2,34.0,flexible antagonist,2.64,18.0,557.28,11.0,optimal
+25047,2,40.0,fixed antagonist,0.17,2.0,910.33,5.0,low
+25048,3,30.0,agonist,3.05,15.0,,13.0,optimal
+25049,1,25.0,fixed antagonist,4.83,25.0,818.46,12.0,optimal
+25050,2,24.0,agonist,4.55,19.0,802.21,,optimal
+25051,2,34.0,flexible antagonist,0.68,4.0,488.99,,low
+25052,1,31.0,agonist,3.39,22.0,352.23,13.0,optimal
+25053,2,34.0,fixed antagonist,0.87,10.0,1899.08,15.0,optimal
+25054,1,37.0,agonist,4.66,30.0,915.6,,high
+25055,1,32.0,flexible antagonist,2.71,,277.88,,optimal
+25056,2,24.0,agonist,1.95,10.0,815.45,,optimal
+25057,1,30.0,flexible antagonist,,21.0,3464.0,22.0,high
+25058,1,27.0,agonist,5.4,34.0,809.69,,high
+25059,1,28.0,flexible antagonist,2.15,17.0,,,low
+25060,1,34.0,flexible antagonist,1.38,,2576.0,,optimal
+25061,1,27.0,fixed antagonist,2.55,20.0,573.71,12.0,optimal
+25062,1,40.0,flexible antagonist,1.73,14.0,3206.0,,high
+25063,2,31.0,agonist,4.05,38.0,349.76,22.0,high
+25064,1,36.0,flexible antagonist,1.52,14.0,82.28,17.0,high
+25065,1,40.0,flexible antagonist,0.78,6.0,702.19,6.0,low
+25066,1,30.0,flexible antagonist,2.9,24.0,528.61,,low
+25067,2,32.0,flexible antagonist,3.64,26.0,346.42,27.0,high
+25068,1,27.0,fixed antagonist,,18.0,610.68,16.0,optimal
+25069,1,34.0,flexible antagonist,3.07,,735.51,,optimal
+25070,1,32.0,fixed antagonist,0.66,,3730.0,4.0,low
+25071,1,33.0,fixed antagonist,4.59,30.0,272.13,26.0,high
+25072,2,27.0,flexible antagonist,1.28,13.0,939.02,9.0,optimal
+25073,1,28.0,fixed antagonist,1.42,4.0,404.44,,low
+25074,1,29.0,agonist,0.86,7.0,600.79,7.0,low
+25075,1,34.0,flexible antagonist,0.23,,383.58,,low
+25076,1,29.0,fixed antagonist,3.11,21.0,1155.27,13.0,optimal
+25077,3,40.0,fixed antagonist,,30.0,648.94,19.0,high
+25078,1,33.0,flexible antagonist,0.73,,4517.0,,low
+25079,1,42.0,flexible antagonist,0.1,1.0,1316.63,,low
+25080,1,27.0,flexible antagonist,3.32,24.0,1123.91,,optimal
+25081,1,34.0,fixed antagonist,4.42,40.0,515.34,,high
+25082,2,41.0,agonist,3.18,,315.95,16.0,high
+25083,1,30.0,flexible antagonist,1.39,9.0,757.93,,low
+25084,2,24.0,flexible antagonist,3.17,15.0,854.54,16.0,optimal
+25085,1,32.0,fixed antagonist,0.49,6.0,966.36,,low
+25086,1,33.0,flexible antagonist,,13.0,1241.21,,optimal
+25087,1,26.0,fixed antagonist,2.44,14.0,328.32,,optimal
+25088,1,36.0,flexible antagonist,,5.0,706.39,,optimal
+25089,2,41.0,flexible antagonist,2.18,14.0,4802.0,16.0,optimal
+25090,2,28.0,flexible antagonist,1.32,9.0,577.5,17.0,optimal
+25091,1,28.0,fixed antagonist,0.76,9.0,817.02,,low
+25092,1,33.0,flexible antagonist,,23.0,597.02,18.0,high
+25093,2,27.0,agonist,1.04,5.0,1035.54,6.0,low
+25094,2,28.0,flexible antagonist,3.89,18.0,456.07,9.0,optimal
+25095,2,28.0,flexible antagonist,,11.0,489.14,,low
+25096,1,37.0,fixed antagonist,0.43,9.0,804.33,10.0,optimal
+25097,1,,flexible antagonist,1.08,11.0,3679.0,4.0,low
+25098,1,29.0,fixed antagonist,4.35,32.0,734.85,,high
+25099,1,24.0,fixed antagonist,0.84,2.0,840.01,4.0,low
+25100,1,43.0,fixed antagonist,1.18,9.0,1432.52,13.0,high
+25101,1,32.0,flexible antagonist,,28.0,656.66,,optimal
+25102,1,30.0,agonist,5.4,30.0,509.84,,low
+25103,3,39.0,agonist,0.69,7.0,3000.0,,low
+25104,2,33.0,flexible antagonist,3.42,25.0,689.37,,optimal
+25105,1,33.0,fixed antagonist,0.92,1.0,912.31,5.0,low
+25106,1,27.0,flexible antagonist,1.78,7.0,4348.0,,optimal
+25107,1,36.0,flexible antagonist,4.94,32.0,1113.54,,optimal
+25108,1,25.0,flexible antagonist,,13.0,451.72,,optimal
+25109,3,34.0,flexible antagonist,0.42,1.0,804.78,4.0,low
+25110,1,29.0,flexible antagonist,1.24,,468.9,13.0,optimal
+25111,2,28.0,agonist,3.39,23.0,627.58,19.0,high
+25112,1,37.0,fixed antagonist,0.88,4.0,2911.0,,low
+25113,2,31.0,flexible antagonist,3.64,27.0,29.16,,high
+25114,1,34.0,flexible antagonist,1.71,12.0,693.88,12.0,optimal
+25115,2,29.0,fixed antagonist,3.93,34.0,808.12,28.0,high
+25116,3,33.0,agonist,0.97,6.0,312.62,3.0,low
+25117,1,41.0,flexible antagonist,0.63,2.0,984.28,,low
+25118,1,35.0,flexible antagonist,0.84,4.0,383.95,6.0,low
+25119,3,26.0,fixed antagonist,0.93,,627.54,3.0,low
+25120,1,39.0,flexible antagonist,0.1,1.0,643.06,4.0,low
+25121,3,39.0,fixed antagonist,0.47,3.0,406.1,,low
+25122,2,30.0,fixed antagonist,4.76,38.0,680.81,24.0,low
+25123,1,24.0,fixed antagonist,2.05,12.0,886.56,,optimal
+25124,1,32.0,flexible antagonist,3.55,18.0,71.44,,optimal
+25125,3,32.0,fixed antagonist,,1.0,432.85,,low
+25126,1,25.0,agonist,,7.0,3935.0,11.0,optimal
+25127,1,33.0,flexible antagonist,3.19,25.0,863.69,,optimal
+25128,1,28.0,flexible antagonist,1.41,3.0,875.85,8.0,optimal
+25129,1,37.0,fixed antagonist,2.22,13.0,666.1,8.0,optimal
+25130,1,31.0,fixed antagonist,2.26,17.0,620.79,13.0,optimal
+25131,1,37.0,fixed antagonist,4.75,31.0,405.99,18.0,high
+25132,3,36.0,agonist,2.3,,1020.31,13.0,optimal
+25133,1,26.0,flexible antagonist,2.39,14.0,575.4,,optimal
+25134,2,38.0,flexible antagonist,,13.0,767.67,12.0,high
+25135,1,35.0,flexible antagonist,3.27,19.0,4766.0,16.0,optimal
+25136,1,37.0,flexible antagonist,1.81,14.0,991.81,14.0,optimal
+25137,2,38.0,agonist,,20.0,730.31,,optimal
+25138,1,29.0,agonist,1.06,10.0,787.56,3.0,low
+25139,1,26.0,agonist,3.39,23.0,845.0,12.0,optimal
+25140,2,33.0,flexible antagonist,,20.0,473.91,,optimal
+25141,1,30.0,flexible antagonist,3.07,18.0,,15.0,optimal
+25142,3,28.0,agonist,2.91,20.0,558.26,,optimal
+25143,1,35.0,fixed antagonist,3.99,21.0,662.54,17.0,high
+25144,1,35.0,flexible antagonist,2.84,26.0,860.89,,high
+25125,1,31.0,fixed antagonist,2.08,8.0,554.65,,optimal
+25111,1,34.0,flexible antagonist,3.16,19.0,,,optimal
+25145,2,27.0,fixed antagonist,2.78,23.0,446.99,,optimal
+25146,3,35.0,flexible antagonist,0.55,1.0,654.79,,low
+25147,2,37.0,flexible antagonist,2.35,16.0,534.07,8.0,high
+25148,1,41.0,agonist,0.62,1.0,,,low
+25149,1,34.0,flexible antagonist,3.32,19.0,510.05,15.0,optimal
+25150,2,26.0,fixed antagonist,1.66,15.0,697.73,,optimal
+25151,1,35.0,agonist,1.39,7.0,433.29,,low
+25152,1,31.0,flexible antagonist,3.19,23.0,,17.0,high
+25153,2,34.0,fixed antagonist,0.43,3.0,1066.88,,low
+25154,1,37.0,agonist,5.08,34.0,852.61,,high
+25155,1,35.0,flexible antagonist,3.77,29.0,887.49,,optimal
+25156,1,38.0,fixed antagonist,2.45,20.0,,,optimal
+25157,3,34.0,fixed antagonist,1.81,8.0,737.54,14.0,optimal
+25045,2,33.0,agonist,0.76,5.0,1026.51,,low
+25158,2,32.0,flexible antagonist,1.27,9.0,2858.0,4.0,low
+25159,2,30.0,fixed antagonist,,9.0,3058.0,3.0,low
+25160,1,29.0,flexible antagonist,,1.0,1018.09,4.0,low
+25161,1,42.0,flexible antagonist,2.33,15.0,476.32,,optimal
+25162,2,32.0,agonist,3.37,19.0,4124.0,10.0,optimal
+25163,1,34.0,agonist,0.55,12.0,253.04,6.0,low
+25164,2,33.0,fixed antagonist,3.38,15.0,613.06,15.0,high
+25165,1,37.0,agonist,1.15,1.0,1062.04,7.0,low
+25166,1,31.0,fixed antagonist,2.1,14.0,747.45,8.0,optimal
+25038,2,27.0,agonist,5.01,36.0,456.5,,high
+25167,1,33.0,flexible antagonist,2.33,15.0,1456.97,9.0,optimal
+25168,1,24.0,agonist,4.56,35.0,429.01,,high
+25169,2,27.0,flexible antagonist,,5.0,764.81,,optimal
+25170,1,32.0,fixed antagonist,,11.0,1122.68,,optimal
+25171,1,32.0,flexible antagonist,2.66,12.0,893.28,,optimal
+25037,2,37.0,flexible antagonist,2.2,8.0,533.34,,optimal
+25172,1,36.0,flexible antagonist,2.5,19.0,487.93,,optimal
+25107,2,29.0,flexible antagonist,0.9,9.0,637.69,,low
+25173,1,41.0,flexible antagonist,4.65,35.0,4984.0,27.0,high
+25174,1,29.0,fixed antagonist,4.39,33.0,612.75,14.0,high
+25175,2,32.0,flexible antagonist,3.11,26.0,562.52,13.0,optimal
+25176,2,36.0,flexible antagonist,0.52,7.0,595.84,5.0,low
+25177,2,28.0,agonist,1.98,25.0,384.03,,optimal
+25178,2,36.0,agonist,2.16,13.0,982.04,17.0,optimal
+25179,2,32.0,agonist,,3.0,4186.0,5.0,low
+25055,1,32.0,flexible antagonist,4.02,27.0,652.67,19.0,high
+25180,1,34.0,flexible antagonist,0.84,11.0,2890.0,7.0,low
+25177,2,31.0,fixed antagonist,4.05,32.0,976.35,27.0,high
+25181,1,30.0,flexible antagonist,1.04,3.0,939.86,,low
+25182,3,27.0,agonist,3.25,26.0,1593.49,13.0,optimal
+25183,2,35.0,agonist,3.47,23.0,,,optimal
+25184,1,30.0,fixed antagonist,1.6,8.0,4074.0,,optimal
+25185,1,31.0,flexible antagonist,3.0,28.0,449.92,,high
+25186,2,24.0,flexible antagonist,5.13,26.0,958.21,10.0,optimal
+25187,1,26.0,flexible antagonist,0.36,5.0,,,low
+25188,2,25.0,fixed antagonist,0.81,1.0,,,low
+25189,1,33.0,flexible antagonist,,10.0,3296.0,,optimal
+25190,1,26.0,fixed antagonist,1.25,19.0,1023.1,15.0,optimal
+25191,2,29.0,fixed antagonist,3.47,33.0,658.16,18.0,high
+25192,1,30.0,flexible antagonist,3.5,27.0,1029.29,25.0,high
+25193,2,32.0,flexible antagonist,5.91,44.0,3465.0,,high
+25194,1,35.0,agonist,2.35,24.0,4203.0,,optimal
+25195,2,33.0,flexible antagonist,2.44,,1112.37,,optimal
+25196,2,34.0,fixed antagonist,2.8,19.0,,14.0,optimal
+25197,1,33.0,flexible antagonist,1.7,16.0,4126.0,,optimal
+25198,1,29.0,flexible antagonist,5.83,34.0,,,high
+25199,1,31.0,flexible antagonist,5.88,44.0,646.42,29.0,high
+25200,3,33.0,flexible antagonist,1.24,7.0,692.68,,low
+25201,1,27.0,flexible antagonist,5.88,42.0,1147.98,25.0,high
+25202,1,35.0,agonist,1.63,21.0,632.3,,optimal
+25095,1,36.0,flexible antagonist,1.2,5.0,624.07,,low
+25067,2,35.0,agonist,0.98,4.0,1898.96,,low
+25203,1,40.0,agonist,3.14,18.0,340.82,13.0,optimal
+25204,1,27.0,flexible antagonist,1.33,7.0,731.9,,low
+25205,1,36.0,fixed antagonist,1.82,14.0,591.38,8.0,optimal
+25206,1,33.0,fixed antagonist,5.78,30.0,3945.0,,high
+25207,1,33.0,fixed antagonist,0.73,1.0,566.9,,low
+25208,1,34.0,fixed antagonist,1.4,15.0,1085.12,15.0,optimal
+25007,2,27.0,fixed antagonist,5.37,38.0,4174.0,26.0,high
+25209,2,33.0,fixed antagonist,2.61,23.0,3062.0,21.0,high
+25210,1,28.0,flexible antagonist,3.69,23.0,267.11,13.0,optimal
+25211,2,35.0,agonist,0.43,2.0,1465.17,,low
+25212,3,28.0,flexible antagonist,2.59,14.0,3398.0,8.0,optimal
+25213,1,28.0,agonist,2.9,21.0,632.77,16.0,optimal
+25214,1,36.0,flexible antagonist,2.36,11.0,491.46,,optimal
+25215,1,36.0,fixed antagonist,1.11,9.0,916.4,,low
+25216,2,30.0,flexible antagonist,4.25,33.0,1135.78,15.0,high
+25217,1,33.0,fixed antagonist,3.18,13.0,4622.0,,low
+25218,3,38.0,flexible antagonist,2.25,14.0,1003.13,,optimal
+25092,1,26.0,flexible antagonist,,20.0,1195.83,16.0,optimal
+25219,2,34.0,flexible antagonist,3.19,25.0,1056.88,,optimal
+25220,1,37.0,fixed antagonist,,10.0,543.68,,optimal
+25221,3,25.0,agonist,1.27,9.0,2887.0,7.0,low
+25222,1,37.0,flexible antagonist,,18.0,550.75,8.0,optimal
+25223,1,24.0,fixed antagonist,3.96,29.0,410.98,,high
+25224,1,40.0,flexible antagonist,0.98,5.0,817.26,5.0,low
+25225,2,24.0,fixed antagonist,5.08,38.0,627.86,,high
+25226,2,29.0,flexible antagonist,2.16,15.0,3951.0,13.0,optimal
+25227,1,32.0,flexible antagonist,1.27,6.0,4790.0,9.0,low
+25228,1,35.0,fixed antagonist,4.0,23.0,577.67,,high
+25229,1,29.0,fixed antagonist,0.92,7.0,,9.0,low
+25230,2,30.0,flexible antagonist,0.7,6.0,924.31,,low
+25231,3,40.0,fixed antagonist,0.92,4.0,666.5,,low
+25232,2,30.0,agonist,4.82,30.0,544.83,22.0,high
+25233,1,32.0,fixed antagonist,1.47,8.0,2099.53,3.0,low
+25234,1,33.0,flexible antagonist,2.78,15.0,687.05,15.0,optimal
+25235,1,24.0,agonist,5.43,40.0,808.95,28.0,high
+25236,1,24.0,agonist,5.87,37.0,533.56,,high
+25237,1,29.0,fixed antagonist,,8.0,990.5,3.0,low
+25238,1,33.0,fixed antagonist,4.47,28.0,583.01,,high
+25239,1,40.0,fixed antagonist,0.81,11.0,1020.34,7.0,low
+25240,1,37.0,flexible antagonist,1.31,4.0,983.05,3.0,low
+25241,1,42.0,fixed antagonist,0.92,12.0,566.93,4.0,low
+25242,1,28.0,flexible antagonist,2.81,18.0,4430.0,18.0,high
+25243,3,37.0,agonist,2.9,21.0,1084.0,14.0,optimal
+25244,1,24.0,fixed antagonist,4.1,32.0,3926.0,29.0,high
+25245,1,34.0,flexible antagonist,1.71,15.0,616.5,,optimal
+25246,1,30.0,flexible antagonist,1.05,7.0,3925.0,3.0,low
+25247,1,33.0,fixed antagonist,,10.0,702.99,,optimal
+25248,1,30.0,agonist,3.56,23.0,906.86,20.0,high
+25249,1,35.0,flexible antagonist,3.09,19.0,1017.99,8.0,optimal
+25018,1,26.0,flexible antagonist,6.02,,870.99,25.0,high
+25250,1,31.0,flexible antagonist,3.76,26.0,1602.05,16.0,high
+25251,1,35.0,flexible antagonist,1.07,2.0,556.6,6.0,low
+25252,2,38.0,agonist,3.98,27.0,289.17,,optimal
+25253,2,24.0,flexible antagonist,,6.0,3142.0,5.0,low
+25254,1,35.0,agonist,3.59,26.0,1021.89,,low
+25255,3,31.0,flexible antagonist,,21.0,756.84,10.0,optimal
+25256,3,30.0,flexible antagonist,4.39,32.0,1072.61,,high
+25257,3,26.0,fixed antagonist,,35.0,2893.0,,high
+25126,1,24.0,agonist,0.49,8.0,782.25,6.0,low
+25258,1,,flexible antagonist,4.73,,317.82,16.0,high
+25127,2,34.0,flexible antagonist,3.21,18.0,1048.03,,optimal
+25259,2,30.0,flexible antagonist,,10.0,482.52,,high
+25260,1,34.0,flexible antagonist,1.17,11.0,1990.83,4.0,low
+25261,1,34.0,fixed antagonist,2.24,13.0,640.63,12.0,optimal
+25262,1,28.0,flexible antagonist,4.24,24.0,839.6,18.0,high
+25263,1,36.0,fixed antagonist,0.87,1.0,945.01,5.0,low
+25264,1,37.0,agonist,2.78,,,15.0,high
+25265,1,,agonist,,1.0,1238.96,4.0,low
+25266,2,26.0,agonist,2.18,10.0,782.0,16.0,optimal
+25267,2,38.0,flexible antagonist,,14.0,,,optimal
+25268,1,29.0,agonist,1.15,6.0,630.32,,low
+25168,1,34.0,flexible antagonist,4.39,28.0,621.22,14.0,optimal
+25269,1,36.0,fixed antagonist,1.15,5.0,1252.35,,low
+25270,2,34.0,fixed antagonist,3.13,24.0,586.98,,optimal
+25271,1,28.0,agonist,2.7,23.0,773.09,14.0,optimal
+25272,1,34.0,flexible antagonist,3.23,24.0,735.44,,optimal
+25273,1,27.0,flexible antagonist,0.99,1.0,601.85,,low
+25151,1,31.0,agonist,1.44,19.0,3538.0,,optimal
+25274,2,31.0,agonist,1.73,15.0,354.14,,optimal
+25275,3,33.0,flexible antagonist,,6.0,884.74,8.0,optimal
+25276,1,35.0,agonist,2.29,18.0,803.0,15.0,optimal
+25277,2,27.0,fixed antagonist,,29.0,424.39,,high
+25278,1,33.0,fixed antagonist,3.03,24.0,1182.24,,optimal
+25279,2,34.0,flexible antagonist,5.07,35.0,298.72,,high
+25280,2,33.0,fixed antagonist,0.6,16.0,586.98,,optimal
+25281,1,39.0,flexible antagonist,0.24,1.0,209.13,,low
+25282,1,24.0,fixed antagonist,2.9,24.0,3942.0,12.0,optimal
+25283,1,25.0,fixed antagonist,4.52,28.0,,,optimal
+25284,1,29.0,fixed antagonist,5.71,43.0,552.35,23.0,high
+25285,1,27.0,flexible antagonist,5.48,32.0,437.41,28.0,high
+25286,1,27.0,fixed antagonist,0.89,,907.45,4.0,low
+25287,1,34.0,agonist,0.69,1.0,4373.0,7.0,low
+25098,1,27.0,agonist,3.04,16.0,4031.0,,optimal
+25288,1,31.0,agonist,2.84,19.0,479.33,,optimal
+25289,2,32.0,fixed antagonist,2.88,17.0,516.86,11.0,high
+25088,1,31.0,fixed antagonist,2.6,22.0,341.3,26.0,high
+25290,1,29.0,agonist,2.42,21.0,907.89,,optimal
+25291,1,25.0,fixed antagonist,3.11,22.0,922.56,,optimal
+25292,3,40.0,agonist,3.16,22.0,501.08,,optimal
+25293,2,30.0,fixed antagonist,1.45,,816.33,4.0,low
+25294,1,33.0,flexible antagonist,3.4,28.0,760.79,,optimal
+25295,2,35.0,fixed antagonist,2.75,,922.85,13.0,optimal
+25296,2,40.0,fixed antagonist,1.44,7.0,1040.32,,optimal
+25297,2,24.0,flexible antagonist,0.95,8.0,600.78,,low
+25298,1,33.0,agonist,1.58,,1068.98,,low
+25299,1,34.0,fixed antagonist,3.45,23.0,742.73,28.0,high
+25300,2,34.0,flexible antagonist,3.03,18.0,677.14,8.0,optimal
+25121,1,26.0,flexible antagonist,2.24,14.0,1160.55,,optimal
+25301,1,31.0,agonist,1.7,4.0,434.56,9.0,low
+25302,1,27.0,flexible antagonist,0.95,6.0,593.34,10.0,optimal
+25303,1,31.0,fixed antagonist,3.8,30.0,406.83,,high
+25304,1,26.0,agonist,3.04,24.0,1088.44,,optimal
+25305,3,39.0,fixed antagonist,0.3,,798.85,6.0,low
+25306,1,36.0,fixed antagonist,,7.0,640.15,5.0,low
+25307,3,36.0,fixed antagonist,2.68,19.0,1392.69,,optimal
+25308,1,38.0,flexible antagonist,,,616.95,,optimal
+25309,1,31.0,flexible antagonist,3.59,19.0,4083.0,10.0,optimal
+25007,1,40.0,flexible antagonist,0.86,14.0,927.32,6.0,low
+25125,1,41.0,flexible antagonist,0.53,12.0,4421.0,5.0,low
+25310,2,42.0,flexible antagonist,0.53,2.0,471.86,7.0,low
+25311,1,28.0,agonist,,41.0,703.48,26.0,high
+25312,2,35.0,agonist,0.32,2.0,,,low
+25313,1,39.0,flexible antagonist,3.71,,4732.0,,high
+25109,2,35.0,flexible antagonist,2.76,21.0,2969.0,,high
+25314,2,28.0,fixed antagonist,0.74,14.0,774.58,,optimal
+25315,1,30.0,flexible antagonist,,5.0,489.21,,low
+25316,3,37.0,agonist,2.23,16.0,813.93,15.0,optimal
+25242,1,31.0,flexible antagonist,1.37,2.0,,9.0,optimal
+25317,1,36.0,fixed antagonist,4.77,39.0,572.02,24.0,high
+25318,2,32.0,flexible antagonist,2.28,19.0,3403.0,13.0,optimal
+25319,1,32.0,agonist,4.3,30.0,965.22,,high
+25320,1,29.0,fixed antagonist,3.13,25.0,538.46,12.0,optimal
+25321,2,26.0,fixed antagonist,2.56,12.0,787.07,,optimal
+25322,1,28.0,agonist,5.06,34.0,470.13,27.0,high
+25323,3,37.0,flexible antagonist,1.11,6.0,789.28,,low
+25324,1,24.0,agonist,3.04,27.0,844.91,17.0,optimal
+25325,3,24.0,flexible antagonist,4.37,22.0,1148.86,,optimal
+25326,1,27.0,agonist,2.88,20.0,822.03,8.0,optimal
+25327,1,26.0,fixed antagonist,1.93,22.0,698.62,14.0,optimal
+25328,2,33.0,fixed antagonist,1.38,13.0,975.92,10.0,optimal
+25329,1,34.0,fixed antagonist,0.95,5.0,4791.0,,low
+25330,1,43.0,agonist,0.21,4.0,556.35,8.0,low
+25331,2,26.0,fixed antagonist,2.7,17.0,698.68,15.0,optimal
+25332,1,30.0,agonist,4.95,36.0,605.12,,high
+25248,2,25.0,flexible antagonist,0.87,8.0,4998.0,9.0,low
+25165,1,38.0,fixed antagonist,0.36,1.0,699.43,4.0,low
+25333,1,29.0,fixed antagonist,2.51,17.0,200.37,9.0,optimal
+25334,2,31.0,agonist,0.42,10.0,663.13,5.0,low
+25335,2,30.0,flexible antagonist,0.78,6.0,1011.5,3.0,low
+25336,1,35.0,flexible antagonist,3.91,27.0,1084.91,,high
+25337,1,29.0,flexible antagonist,,10.0,768.87,13.0,optimal
+25214,2,27.0,fixed antagonist,2.7,18.0,542.66,12.0,optimal
+25338,1,27.0,agonist,2.02,11.0,705.07,,optimal
+25339,2,32.0,flexible antagonist,0.99,1.0,633.26,,low
+25340,1,24.0,agonist,1.48,13.0,1168.27,17.0,optimal
+25341,1,33.0,fixed antagonist,2.53,17.0,308.97,,optimal
+25342,2,31.0,agonist,,3.0,526.18,9.0,low
+25343,1,31.0,flexible antagonist,0.8,5.0,,4.0,low
+25344,1,27.0,agonist,3.35,24.0,1061.32,,optimal
+25345,3,25.0,flexible antagonist,4.24,34.0,577.06,,high
+25346,1,,fixed antagonist,1.14,4.0,204.0,6.0,low
+25347,2,37.0,flexible antagonist,0.1,4.0,,5.0,low
+25348,2,28.0,fixed antagonist,5.82,43.0,484.21,,high
+25349,2,28.0,agonist,0.84,15.0,827.9,,low
+25350,1,41.0,flexible antagonist,,9.0,3824.0,9.0,low
+25069,2,25.0,fixed antagonist,,8.0,1005.64,5.0,low
+25351,1,29.0,fixed antagonist,1.49,11.0,115.43,12.0,optimal
+25352,1,31.0,flexible antagonist,1.29,11.0,1193.93,,low
+25353,1,29.0,flexible antagonist,2.49,18.0,2958.0,12.0,optimal
+25354,1,35.0,agonist,2.26,13.0,326.82,,optimal
+25355,3,24.0,flexible antagonist,,8.0,3527.0,,low
+25356,3,30.0,fixed antagonist,1.48,18.0,819.32,,optimal
+25357,1,34.0,flexible antagonist,2.4,27.0,1082.84,,optimal
+25358,3,28.0,fixed antagonist,0.82,7.0,555.99,3.0,low
+25359,1,30.0,fixed antagonist,0.96,12.0,909.8,,high
+25360,1,24.0,flexible antagonist,,8.0,,13.0,optimal
+25361,1,36.0,flexible antagonist,3.39,34.0,1043.16,,high
+25362,1,35.0,flexible antagonist,5.59,38.0,559.2,,high
+25363,1,30.0,agonist,0.79,14.0,2979.0,,low
+25364,1,28.0,fixed antagonist,1.21,10.0,527.38,,optimal
+25349,1,31.0,flexible antagonist,5.09,38.0,544.93,,high
+25140,1,29.0,flexible antagonist,3.21,20.0,869.52,,optimal
+25365,2,33.0,flexible antagonist,0.66,3.0,425.95,,low
+25366,1,31.0,flexible antagonist,1.24,,2501.0,,low
+25233,1,28.0,fixed antagonist,2.55,,4857.0,,optimal
+25367,1,36.0,fixed antagonist,0.88,9.0,1015.11,9.0,low
+25368,1,41.0,flexible antagonist,0.45,4.0,1013.28,,high
+25369,1,37.0,fixed antagonist,5.74,41.0,268.15,25.0,high
+25370,1,24.0,agonist,6.53,39.0,918.73,24.0,high
+25173,2,32.0,fixed antagonist,0.75,5.0,556.57,,high
+25371,1,32.0,flexible antagonist,,3.0,1045.44,6.0,optimal
+25051,1,35.0,flexible antagonist,4.46,31.0,686.0,,high
+25372,1,36.0,fixed antagonist,2.52,17.0,867.02,,optimal
+25373,2,31.0,agonist,0.95,11.0,3268.0,6.0,low
+25374,1,24.0,flexible antagonist,3.14,22.0,626.58,,optimal
+25375,1,36.0,fixed antagonist,2.83,19.0,1202.22,13.0,optimal
+25362,1,31.0,flexible antagonist,1.79,8.0,361.83,,optimal
+25376,1,33.0,flexible antagonist,3.15,22.0,605.52,12.0,optimal
+25377,3,43.0,fixed antagonist,0.1,2.0,3643.0,7.0,low
+25378,1,31.0,flexible antagonist,0.8,8.0,558.36,5.0,low
+25160,1,35.0,flexible antagonist,2.66,15.0,686.77,,optimal
+25327,1,24.0,fixed antagonist,2.38,22.0,1524.05,11.0,optimal
+25379,3,25.0,fixed antagonist,0.94,8.0,553.69,8.0,low
+25380,3,32.0,flexible antagonist,0.96,2.0,1159.8,3.0,low
+25381,2,34.0,fixed antagonist,1.96,8.0,581.56,,optimal
+25382,1,35.0,fixed antagonist,,13.0,1024.6,,optimal
+25383,1,34.0,flexible antagonist,1.36,19.0,,,high
+25384,2,32.0,flexible antagonist,2.46,15.0,802.02,13.0,high
+25385,3,24.0,agonist,2.64,23.0,,12.0,optimal
+25386,3,31.0,fixed antagonist,1.04,4.0,,,low
+25021,1,42.0,flexible antagonist,0.1,3.0,346.36,4.0,low
+25213,1,28.0,agonist,1.83,,4195.0,,optimal
+25387,1,31.0,flexible antagonist,2.3,19.0,774.92,,optimal
+25388,1,45.0,agonist,1.39,14.0,580.29,14.0,optimal
+25389,1,37.0,fixed antagonist,4.56,33.0,,,high
+25390,2,34.0,flexible antagonist,2.92,,642.12,14.0,optimal
+25391,1,29.0,fixed antagonist,1.33,11.0,805.46,9.0,low
+25392,1,30.0,fixed antagonist,0.5,5.0,241.46,8.0,low
+25393,1,26.0,fixed antagonist,2.73,16.0,,12.0,optimal
+25394,1,29.0,fixed antagonist,2.28,14.0,790.87,,optimal
+25061,3,28.0,agonist,0.47,3.0,360.53,,low
+25395,1,32.0,fixed antagonist,4.22,37.0,2559.0,22.0,high
+25182,1,24.0,fixed antagonist,4.73,,3394.0,25.0,high
+25396,3,28.0,fixed antagonist,1.7,12.0,543.12,15.0,optimal
+25042,1,28.0,flexible antagonist,0.21,5.0,373.69,8.0,optimal
+25397,1,28.0,agonist,2.93,11.0,947.92,,optimal
+25398,1,33.0,agonist,2.18,24.0,1832.04,25.0,high
+25399,1,27.0,fixed antagonist,1.4,10.0,871.61,3.0,optimal
+25400,1,26.0,agonist,,39.0,472.97,24.0,high
+25401,2,26.0,agonist,0.88,5.0,,5.0,low
+25402,1,30.0,flexible antagonist,1.07,7.0,2910.0,16.0,optimal
+25211,1,26.0,agonist,,23.0,3924.0,,optimal
+25403,1,30.0,agonist,0.34,4.0,711.91,5.0,low
+25404,1,,agonist,1.71,13.0,981.48,9.0,optimal
+25405,1,30.0,fixed antagonist,2.6,24.0,601.54,,high
+25406,1,32.0,fixed antagonist,1.11,16.0,3398.0,,optimal
+25407,2,24.0,agonist,0.56,11.0,570.16,5.0,low
+25408,2,34.0,fixed antagonist,1.56,13.0,,8.0,low
+25409,1,27.0,fixed antagonist,4.49,31.0,3145.0,22.0,high
+25410,1,33.0,flexible antagonist,2.92,21.0,779.36,,high
+25339,1,31.0,agonist,4.66,27.0,3796.0,,high
+25075,2,28.0,flexible antagonist,6.16,46.0,4392.0,,high
+25411,1,33.0,flexible antagonist,0.8,4.0,465.03,7.0,low
+25412,2,30.0,flexible antagonist,0.43,13.0,835.4,10.0,optimal
+25413,1,40.0,fixed antagonist,2.41,12.0,556.38,,optimal
+25036,1,34.0,agonist,0.48,1.0,479.88,,high
+25414,1,26.0,fixed antagonist,3.04,20.0,2945.0,,optimal
+25415,1,32.0,agonist,3.56,24.0,3888.0,,optimal
+25416,1,32.0,fixed antagonist,1.49,12.0,775.43,9.0,optimal
+25417,1,31.0,flexible antagonist,,7.0,3778.0,,low
+25418,1,30.0,flexible antagonist,4.95,28.0,2010.06,,optimal
+25419,1,24.0,agonist,4.4,33.0,2954.0,,high
+25420,3,36.0,flexible antagonist,0.25,,524.65,,low
+25421,1,28.0,flexible antagonist,3.62,25.0,353.59,11.0,optimal
+25422,1,32.0,flexible antagonist,1.23,9.0,461.14,,low
+25185,2,35.0,fixed antagonist,4.19,,1618.04,,high
+25423,1,34.0,flexible antagonist,3.03,33.0,571.93,,high
+25424,2,37.0,flexible antagonist,3.28,25.0,,15.0,optimal
+25293,1,34.0,flexible antagonist,4.32,34.0,805.4,,high
+25094,1,31.0,fixed antagonist,1.17,8.0,1013.06,,low
+25425,1,35.0,agonist,3.49,20.0,846.42,15.0,optimal
+25343,1,36.0,flexible antagonist,4.18,31.0,585.02,21.0,high
+25426,2,40.0,agonist,0.79,3.0,3651.0,3.0,optimal
+25427,1,33.0,agonist,,22.0,752.86,,optimal
+25428,1,24.0,fixed antagonist,,18.0,811.84,16.0,optimal
+25260,1,27.0,flexible antagonist,3.34,24.0,502.84,17.0,optimal
+25429,1,24.0,flexible antagonist,0.54,7.0,3897.0,,low
+25430,1,35.0,agonist,3.03,16.0,783.45,,optimal
+25431,2,34.0,fixed antagonist,3.47,20.0,,,optimal
+25432,1,41.0,fixed antagonist,1.06,1.0,689.37,11.0,high
+25433,1,39.0,agonist,0.81,9.0,4213.0,,low
+25434,1,35.0,flexible antagonist,3.16,20.0,1009.5,,high
+25435,1,33.0,fixed antagonist,3.22,19.0,836.91,,optimal
+25436,2,31.0,agonist,0.27,6.0,525.91,3.0,low
+25437,1,41.0,flexible antagonist,0.1,7.0,525.32,9.0,low
+25438,1,31.0,flexible antagonist,0.69,1.0,1079.56,3.0,low
+25439,1,26.0,flexible antagonist,4.1,36.0,1171.6,,high
+25440,1,36.0,fixed antagonist,3.5,22.0,982.4,14.0,high
+25441,1,24.0,fixed antagonist,1.63,13.0,795.57,8.0,low
+25442,2,26.0,flexible antagonist,2.22,21.0,683.31,16.0,optimal
+25225,1,41.0,agonist,0.49,9.0,418.27,,optimal
+25274,1,26.0,flexible antagonist,,,2907.0,24.0,high
+25090,1,31.0,agonist,2.79,23.0,,,optimal
+25443,1,35.0,flexible antagonist,2.77,16.0,690.96,9.0,optimal
+25444,1,29.0,agonist,0.78,7.0,2822.0,,optimal
+25445,2,28.0,fixed antagonist,2.93,23.0,623.42,,optimal
+25446,2,30.0,flexible antagonist,3.64,9.0,350.0,,optimal

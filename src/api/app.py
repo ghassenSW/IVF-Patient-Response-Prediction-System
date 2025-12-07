@@ -17,7 +17,6 @@ import os
 
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
-from model.dataset import get_response_labels
 
 app = FastAPI(
     title="IVF Response Prediction API",
@@ -47,16 +46,31 @@ async def load_model():
     """Load trained model and feature configuration"""
     global model, feature_names, scaler
     
-    project_root = Path(__file__).parent.parent.parent
-    models_dir = project_root / "src" / "model" / "saved_models"
-    data_dir = project_root / "data" / "processed"
-    
-    model = joblib.load(models_dir / "gradient_boosting.pkl")
-    feature_info = joblib.load(models_dir / "feature_info.pkl")
-    feature_names = feature_info['feature_names']
-    scaler = joblib.load(data_dir / "scaler.pkl")
-    
-    print("Model and scaler loaded successfully!")
+    try:
+        project_root = Path(__file__).parent.parent.parent
+        models_dir = project_root / "src" / "model" / "saved_models"
+        data_dir = project_root / "data" / "processed"
+        
+        print(f"Loading model from: {models_dir}")
+        print(f"Loading scaler from: {data_dir}")
+        
+        if not models_dir.exists():
+            raise FileNotFoundError(f"Models directory not found: {models_dir}")
+        if not data_dir.exists():
+            raise FileNotFoundError(f"Data directory not found: {data_dir}")
+        
+        model = joblib.load(models_dir / "gradient_boosting.pkl")
+        feature_info = joblib.load(models_dir / "feature_info.pkl")
+        feature_names = feature_info['feature_names']
+        scaler = joblib.load(data_dir / "scaler.pkl")
+        
+        print("Model and scaler loaded successfully!")
+    except Exception as e:
+        print(f"ERROR loading model: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
+
 
 
 class PatientFeatures(BaseModel):
@@ -181,10 +195,16 @@ async def predict(patient: PatientFeatures):
 @app.get("/model/info")
 async def model_info():
     """Get information about the loaded model"""
+    response_labels = {
+        0: "Low Response",
+        1: "Optimal Response", 
+        2: "High Response"
+    }
+    
     return {
         "model_type": "Gradient Boosting Classifier (Calibrated)",
         "features": feature_names,
-        "classes": list(get_response_labels().values()),
+        "classes": list(response_labels.values()),
         "status": "ready"
     }
 

@@ -27,14 +27,16 @@ wheels/
 .ipynb_checkpoints
 
 # Data
-data/processed/*.csv
-data/processed/*.txt
+# Keep processed data for deployment
+# data/processed/*.csv
+# data/processed/*.txt
 *.log
 
 # Models
-src/model/saved_models/*.pkl
-src/model/saved_models/*.joblib
-src/model/saved_models/*.h5
+# Keep model files for deployment
+# src/model/saved_models/*.pkl
+# src/model/saved_models/*.joblib
+# src/model/saved_models/*.h5
 
 # IDE
 .vscode/
