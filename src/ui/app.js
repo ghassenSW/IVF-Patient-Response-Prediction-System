@@ -21,12 +21,12 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
     // Collect form data
     const formData = new FormData(e.target);
     const patientData = {
-        'cycle_number': parseFloat(formData.get('cycle_number')),
+        'cycle_number': parseInt(formData.get('cycle_number')),
         'Age': parseFloat(formData.get('Age')),
         'AMH': parseFloat(formData.get('AMH')),
-        'n_Follicles': parseFloat(formData.get('n_Follicles')),
+        'n_Follicles': parseInt(formData.get('n_Follicles')),
         'E2_day5': parseFloat(formData.get('E2_day5')),
-        'AFC': parseFloat(formData.get('AFC')),
+        'AFC': parseInt(formData.get('AFC')),
         'Protocol_agonist': formData.get('Protocol_agonist') === 'on',
         'Protocol_fixed antagonist': formData.get('Protocol_fixed_antagonist') === 'on',
         'Protocol_flexible antagonist': formData.get('Protocol_flexible_antagonist') === 'on'

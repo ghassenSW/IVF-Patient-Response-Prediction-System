@@ -34,30 +34,33 @@ app.add_middleware(
 # Load model at startup
 model = None
 feature_names = None
+scaler = None
 
 @app.on_event("startup")
 async def load_model():
     """Load trained model and feature configuration"""
-    global model, feature_names
+    global model, feature_names, scaler
     
     project_root = Path(__file__).parent.parent.parent
     models_dir = project_root / "src" / "model" / "saved_models"
+    data_dir = project_root / "data" / "processed"
     
     model = joblib.load(models_dir / "gradient_boosting.pkl")
     feature_info = joblib.load(models_dir / "feature_info.pkl")
     feature_names = feature_info['feature_names']
+    scaler = joblib.load(data_dir / "scaler.pkl")
     
-    print("Model loaded successfully!")
+    print("Model and scaler loaded successfully!")
 
 
 class PatientFeatures(BaseModel):
-    """Input features for prediction (normalized values)"""
-    cycle_number: float = Field(..., description="Treatment cycle number (normalized)")
-    Age: float = Field(..., description="Patient age (normalized)")
-    AMH: float = Field(..., description="Anti-Müllerian hormone level (normalized)")
-    n_Follicles: float = Field(..., description="Number of follicles (normalized)")
-    E2_day5: float = Field(..., description="Estradiol level day 5 (normalized)")
-    AFC: float = Field(..., description="Antral follicle count (normalized)")
+    """Input features for prediction (real clinical values)"""
+    cycle_number: int = Field(..., description="Treatment cycle number (1, 2, 3, etc.)", ge=1, le=20)
+    Age: float = Field(..., description="Patient age in years", ge=18, le=60)
+    AMH: float = Field(..., description="Anti-Müllerian hormone level (ng/mL)", ge=0.0, le=20.0)
+    n_Follicles: int = Field(..., description="Number of follicles", ge=0, le=100)
+    E2_day5: float = Field(..., description="Estradiol level day 5 (pg/mL)", ge=0, le=10000)
+    AFC: int = Field(..., description="Antral follicle count", ge=0, le=2000)
     Protocol_agonist: bool = Field(False, description="Using agonist protocol", alias="Protocol_agonist")
     Protocol_fixed_antagonist: bool = Field(False, description="Using fixed antagonist protocol", alias="Protocol_fixed antagonist")
     Protocol_flexible_antagonist: bool = Field(False, description="Using flexible antagonist protocol", alias="Protocol_flexible antagonist")
@@ -66,12 +69,12 @@ class PatientFeatures(BaseModel):
         populate_by_name = True
         json_schema_extra = {
             "example": {
-                "cycle_number": 0.0,
-                "Age": -0.5,
-                "AMH": 1.2,
-                "n_Follicles": 0.8,
-                "E2_day5": 0.3,
-                "AFC": 1.5,
+                "cycle_number": 1,
+                "Age": 32,
+                "AMH": 2.5,
+                "n_Follicles": 12,
+                "E2_day5": 300,
+                "AFC": 15,
                 "Protocol_agonist": False,
                 "Protocol_fixed antagonist": False,
                 "Protocol_flexible antagonist": True
@@ -101,19 +104,33 @@ async def root():
 async def predict(patient: PatientFeatures):
     """
     Predict patient ovarian response to IVF treatment
+    Accepts real clinical values and normalizes them automatically
     
     Returns prediction with probabilities and clinical interpretation
     """
     try:
-        # Prepare feature vector - manually map to exact feature names
+        # Prepare numerical features for normalization (in correct order)
+        numerical_features = np.array([
+            patient.cycle_number,
+            patient.Age,
+            patient.AMH,
+            patient.n_Follicles,
+            patient.E2_day5,
+            patient.AFC
+        ]).reshape(1, -1)
+        
+        # Normalize numerical features
+        normalized_features = scaler.transform(numerical_features)[0]
+        
+        # Prepare complete feature vector with protocol one-hot encoding
         # Model expects spaces in protocol names
         feature_dict = {
-            'cycle_number': patient.cycle_number,
-            'Age': patient.Age,
-            'AMH': patient.AMH,
-            'n_Follicles': patient.n_Follicles,
-            'E2_day5': patient.E2_day5,
-            'AFC': patient.AFC,
+            'cycle_number': normalized_features[0],
+            'Age': normalized_features[1],
+            'AMH': normalized_features[2],
+            'n_Follicles': normalized_features[3],
+            'E2_day5': normalized_features[4],
+            'AFC': normalized_features[5],
             'Protocol_agonist': int(patient.Protocol_agonist),
             'Protocol_fixed antagonist': int(patient.Protocol_fixed_antagonist),
             'Protocol_flexible antagonist': int(patient.Protocol_flexible_antagonist)

@@ -136,16 +136,17 @@ python src/api/start_api.py
 
 **Open the UI:**
 - Open `src/ui/index.html` in your web browser
-- Fill in patient information in the form
-**Start the API server:**
-```bash
-python src/api/app.py
-```
-
-**Open the UI:**
-- Open `src/ui/index.html` in your web browser
-- Fill in patient information in the form
+- Fill in patient information with **real clinical values**:
+  - **Cycle Number**: Treatment attempt (1-10)
+  - **Age**: Patient age in years (18-50, typical: 24-45)
+  - **AMH**: Anti-Müllerian Hormone level in ng/mL (0-10, typical: 0.1-6.5)
+  - **Number of Follicles**: Follicle count (0-50, typical: 1-46)
+  - **E2 Day 5**: Estradiol level in pg/mL (0-5000, typical: 29-5000)
+  - **AFC**: Antral Follicle Count (0-50, typical: 3-30)
+  - **Protocol**: Select one stimulation protocol
 - Click "Predict Response" to see results
+
+**Note**: The system automatically normalizes input values before prediction.
 
 **API Documentation (Swagger UI):**
 Visit `http://localhost:8000/docs` for interactive API testing
@@ -154,13 +155,14 @@ Visit `http://localhost:8000/docs` for interactive API testing
 ```python
 import requests
 
+# Use real clinical values - API handles normalization automatically
 patient_data = {
-    "cycle_number": 0.0,
-    "Age": -0.5,
-    "AMH": 1.56,
-    "n_Follicles": 1.33,
-    "E2_day5": -0.12,
-    "AFC": 2.87,
+    "cycle_number": 1,
+    "Age": 32,
+    "AMH": 2.5,
+    "n_Follicles": 12,
+    "E2_day5": 300,
+    "AFC": 15,
     "Protocol_agonist": False,
     "Protocol_fixed antagonist": False,
     "Protocol_flexible antagonist": True
