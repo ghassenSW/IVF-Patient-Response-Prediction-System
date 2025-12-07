@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ivf-response-predictor
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -k uvicorn.workers.UvicornWorker src.api.app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+    healthCheckPath: /

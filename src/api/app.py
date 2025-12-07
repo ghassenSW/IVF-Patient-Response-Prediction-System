@@ -5,12 +5,15 @@ Provides endpoints for model inference with probability outputs
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Dict
 import joblib
 import numpy as np
 from pathlib import Path
 import sys
+import os
 
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
@@ -25,7 +28,10 @@ app = FastAPI(
 # Enable CORS for UI access
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify exact origins
+    allow_origins=[
+        "*",  # Allow all origins for development and production
+        "https://*.onrender.com",  # Render deployment
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -181,6 +187,35 @@ async def model_info():
         "classes": list(get_response_labels().values()),
         "status": "ready"
     }
+
+
+# Mount static files and serve UI
+ui_dir = Path(__file__).parent.parent / "ui"
+if ui_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(ui_dir)), name="static")
+    
+    @app.get("/ui")
+    async def serve_ui():
+        """Serve the web UI"""
+        return FileResponse(str(ui_dir / "index.html"))
+    
+    @app.get("/")
+    async def root():
+        """Redirect to UI or show API info"""
+        return FileResponse(str(ui_dir / "index.html"))
+else:
+    @app.get("/")
+    async def root():
+        """API root endpoint"""
+        return {
+            "message": "IVF Response Prediction API",
+            "version": "1.0.0",
+            "endpoints": {
+                "predict": "/predict",
+                "model_info": "/model/info",
+                "docs": "/docs"
+            }
+        }
 
 
 if __name__ == "__main__":
