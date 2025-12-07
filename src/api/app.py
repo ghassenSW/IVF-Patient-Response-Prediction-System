@@ -9,6 +9,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Dict
+from contextlib import asynccontextmanager
 import joblib
 import numpy as np
 from pathlib import Path
@@ -18,32 +19,15 @@ import os
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
 
-app = FastAPI(
-    title="IVF Response Prediction API",
-    description="Predict patient ovarian response to IVF treatment",
-    version="1.0.0"
-)
-
-# Enable CORS for UI access
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "*",  # Allow all origins for development and production
-        "https://*.onrender.com",  # Render deployment
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Load model at startup
+# Global variables for model
 model = None
 feature_names = None
 scaler = None
 
-@app.on_event("startup")
-async def load_model():
-    """Load trained model and feature configuration"""
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Load model on startup, cleanup on shutdown"""
     global model, feature_names, scaler
     
     try:
@@ -70,7 +54,31 @@ async def load_model():
         import traceback
         traceback.print_exc()
         raise
+    
+    yield
+    
+    # Cleanup (if needed)
+    print("Shutting down...")
 
+
+app = FastAPI(
+    title="IVF Response Prediction API",
+    description="Predict patient ovarian response to IVF treatment",
+    version="1.0.0",
+    lifespan=lifespan
+)
+
+# Enable CORS for UI access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "*",  # Allow all origins for development and production
+        "https://*.onrender.com",  # Render deployment
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class PatientFeatures(BaseModel):
