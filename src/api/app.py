@@ -31,12 +31,18 @@ async def lifespan(app: FastAPI):
     global model, feature_names, scaler
     
     try:
-        # Get the project root - app.py is at src/api/app.py
-        # So parent.parent gets us to project root
+        # Get the project root
+        # Local: /path/to/project/src/api/app.py -> project root is 2 levels up
+        # Render: /opt/render/project/src/src/api/app.py -> project root is /opt/render/project/src
         current_file = Path(__file__).resolve()
-        api_dir = current_file.parent  # src/api
-        src_dir = api_dir.parent  # src
-        project_root = src_dir.parent  # project root
+        
+        # Check if we're on Render (has /opt/render/project/src in path)
+        if '/opt/render/project/src' in str(current_file):
+            # On Render: project root is /opt/render/project/src
+            project_root = Path('/opt/render/project/src')
+        else:
+            # Local development: go up 2 levels from api dir
+            project_root = current_file.parent.parent.parent
         
         models_dir = project_root / "src" / "model" / "saved_models"
         data_dir = project_root / "data" / "processed"
@@ -49,13 +55,22 @@ async def lifespan(app: FastAPI):
         if not models_dir.exists():
             # Debug: list what's actually there
             print(f"Models dir does not exist. Checking parent dirs:")
-            print(f"  api_dir exists: {api_dir.exists()} -> {api_dir}")
-            print(f"  src_dir exists: {src_dir.exists()} -> {src_dir}")
-            print(f"  project_root exists: {project_root.exists()} -> {project_root}")
             if project_root.exists():
-                print(f"  Contents of project_root: {list(project_root.iterdir())[:10]}")
+                print(f"  Contents of project_root: {list(project_root.iterdir())}")
+                src_check = project_root / "src"
+                if src_check.exists():
+                    print(f"  Contents of src: {list(src_check.iterdir())}")
+                    model_check = src_check / "model"
+                    if model_check.exists():
+                        print(f"  Contents of model: {list(model_check.iterdir())}")
             raise FileNotFoundError(f"Models directory not found: {models_dir}")
+        
         if not data_dir.exists():
+            print(f"Data dir does not exist: {data_dir}")
+            if project_root.exists():
+                data_check = project_root / "data"
+                if data_check.exists():
+                    print(f"  Contents of data: {list(data_check.iterdir())}")
             raise FileNotFoundError(f"Data directory not found: {data_dir}")
         
         model = joblib.load(models_dir / "gradient_boosting.pkl")
