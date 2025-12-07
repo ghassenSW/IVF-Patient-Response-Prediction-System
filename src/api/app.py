@@ -149,14 +149,29 @@ class PredictionResponse(BaseModel):
     clinical_note: str = Field(..., description="Clinical interpretation")
 
 
-@app.get("/")
-async def root():
-    """API health check"""
-    return {
-        "status": "online",
-        "message": "IVF Response Prediction API",
-        "version": "1.0.0"
-    }
+# Mount static files and serve UI FIRST (before other routes)
+ui_dir = Path(__file__).parent.parent / "ui"
+if ui_dir.exists():
+    app.mount("/static", StaticFiles(directory=str(ui_dir)), name="static")
+    
+    @app.get("/ui")
+    async def serve_ui():
+        """Serve the web UI"""
+        return FileResponse(str(ui_dir / "index.html"))
+    
+    @app.get("/")
+    async def root_with_ui():
+        """Serve the web UI at root"""
+        return FileResponse(str(ui_dir / "index.html"))
+else:
+    @app.get("/")
+    async def root():
+        """API health check"""
+        return {
+            "status": "online",
+            "message": "IVF Response Prediction API",
+            "version": "1.0.0"
+        }
 
 
 @app.post("/predict", response_model=PredictionResponse)
@@ -249,35 +264,6 @@ async def model_info():
         "classes": list(response_labels.values()),
         "status": "ready"
     }
-
-
-# Mount static files and serve UI
-ui_dir = Path(__file__).parent.parent / "ui"
-if ui_dir.exists():
-    app.mount("/static", StaticFiles(directory=str(ui_dir)), name="static")
-    
-    @app.get("/ui")
-    async def serve_ui():
-        """Serve the web UI"""
-        return FileResponse(str(ui_dir / "index.html"))
-    
-    @app.get("/")
-    async def root():
-        """Redirect to UI or show API info"""
-        return FileResponse(str(ui_dir / "index.html"))
-else:
-    @app.get("/")
-    async def root():
-        """API root endpoint"""
-        return {
-            "message": "IVF Response Prediction API",
-            "version": "1.0.0",
-            "endpoints": {
-                "predict": "/predict",
-                "model_info": "/model/info",
-                "docs": "/docs"
-            }
-        }
 
 
 if __name__ == "__main__":
