@@ -169,17 +169,19 @@ async def predict(patient: PatientFeatures):
     """
     try:
         # Prepare numerical features for normalization (in correct order)
-        numerical_features = np.array([
+        import pandas as pd
+        numerical_cols = ['cycle_number', 'Age', 'AMH', 'n_Follicles', 'E2_day5', 'AFC']
+        numerical_data = pd.DataFrame([[
             patient.cycle_number,
             patient.Age,
             patient.AMH,
             patient.n_Follicles,
             patient.E2_day5,
             patient.AFC
-        ]).reshape(1, -1)
+        ]], columns=numerical_cols)
         
-        # Normalize numerical features
-        normalized_features = scaler.transform(numerical_features)[0]
+        # Normalize numerical features (with proper column names)
+        normalized_features = scaler.transform(numerical_data)[0]
         
         # Prepare complete feature vector with protocol one-hot encoding
         # Model expects spaces in protocol names
@@ -205,7 +207,8 @@ async def predict(patient: PatientFeatures):
         probabilities = model.predict_proba(feature_vector)[0]
         predicted_class = probabilities.argmax()
         
-        labels = get_response_labels()
+        # Response labels mapping
+        labels = {0: "low", 1: "optimal", 2: "high"}
         prediction = labels[predicted_class]
         
         # Clinical interpretation
