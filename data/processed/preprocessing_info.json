@@ -1,0 +1,23 @@
+{
+  "feature_columns": [
+    "cycle_number",
+    "Age",
+    "AMH",
+    "n_Follicles",
+    "E2_day5",
+    "AFC",
+    "Protocol_agonist",
+    "Protocol_fixed antagonist",
+    "Protocol_flexible antagonist"
+  ],
+  "response_mapping": {
+    "low": 0,
+    "optimal": 1,
+    "high": 2
+  },
+  "inverse_response_mapping": {
+    "0": "low",
+    "1": "optimal",
+    "2": "high"
+  }
+}

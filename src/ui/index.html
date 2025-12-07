@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVF Response Prediction System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 IVF Patient Response Prediction</h1>
+            <p class="subtitle">AI-powered ovarian response stratification system</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Form -->
+            <div class="card">
+                <h2>Patient Information</h2>
+                <form id="predictionForm">
+                    <div class="form-group">
+                        <label for="cycle_number">Cycle Number</label>
+                        <input type="number" id="cycle_number" name="cycle_number" 
+                               step="0.01" value="0.0" required>
+                        <small>Treatment attempt number (normalized)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Age">Age</label>
+                        <input type="number" id="Age" name="Age" 
+                               step="0.01" value="-0.5" required>
+                        <small>Patient age (normalized)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="AMH">AMH Level</label>
+                        <input type="number" id="AMH" name="AMH" 
+                               step="0.01" value="1.56" required>
+                        <small>Anti-Müllerian Hormone (normalized)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="n_Follicles">Number of Follicles</label>
+                        <input type="number" id="n_Follicles" name="n_Follicles" 
+                               step="0.01" value="1.33" required>
+                        <small>Follicle count at last monitoring (normalized)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="E2_day5">E2 Day 5</label>
+                        <input type="number" id="E2_day5" name="E2_day5" 
+                               step="0.01" value="-0.12" required>
+                        <small>Estradiol level on day 5 (normalized)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="AFC">AFC</label>
+                        <input type="number" id="AFC" name="AFC" 
+                               step="0.01" value="2.87" required>
+                        <small>Antral Follicle Count (normalized)</small>
+                    </div>
+
+                    <div class="form-group protocol-group">
+                        <label>Stimulation Protocol</label>
+                        <div class="protocol-options">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="Protocol_agonist" name="Protocol_agonist">
+                                <label for="Protocol_agonist">Agonist</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="Protocol_fixed_antagonist" name="Protocol_fixed_antagonist">
+                                <label for="Protocol_fixed_antagonist">Fixed Antagonist</label>
+                            </div>
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="Protocol_flexible_antagonist" name="Protocol_flexible_antagonist" checked>
+                                <label for="Protocol_flexible_antagonist">Flexible Antagonist</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-predict" id="predictBtn">
+                        <span class="btn-text">Predict Response</span>
+                        <span class="btn-loading" style="display: none;">Analyzing...</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Display -->
+            <div class="card results-card" id="resultsCard" style="display: none;">
+                <h2>Prediction Results</h2>
+                
+                <div class="prediction-badge" id="predictionBadge">
+                    <span class="badge-label">Predicted Response:</span>
+                    <span class="badge-value" id="predictionValue">-</span>
+                </div>
+
+                <div class="confidence-section">
+                    <div class="confidence-header">
+                        <span>Confidence Level</span>
+                        <span class="confidence-percent" id="confidencePercent">-</span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidenceFill"></div>
+                    </div>
+                </div>
+
+                <div class="probabilities-section">
+                    <h3>Response Probabilities</h3>
+                    <div class="probability-item">
+                        <div class="prob-header">
+                            <span class="prob-label low">Low Response</span>
+                            <span class="prob-value" id="probLow">-</span>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-fill low" id="probFillLow"></div>
+                        </div>
+                    </div>
+                    <div class="probability-item">
+                        <div class="prob-header">
+                            <span class="prob-label optimal">Optimal Response</span>
+                            <span class="prob-value" id="probOptimal">-</span>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-fill optimal" id="probFillOptimal"></div>
+                        </div>
+                    </div>
+                    <div class="probability-item">
+                        <div class="prob-header">
+                            <span class="prob-label high">High Response</span>
+                            <span class="prob-value" id="probHigh">-</span>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-fill high" id="probFillHigh"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-note" id="clinicalNote">
+                    <h3>📋 Clinical Interpretation</h3>
+                    <p id="clinicalNoteText">-</p>
+                </div>
+            </div>
+
+            <!-- Error Display -->
+            <div class="card error-card" id="errorCard" style="display: none;">
+                <h2>⚠️ Error</h2>
+                <p id="errorMessage"></p>
+                <button onclick="document.getElementById('errorCard').style.display='none'" class="btn-close">Close</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>🤖 Powered by Calibrated Gradient Boosting Classifier | Model Accuracy: 86.1%</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
