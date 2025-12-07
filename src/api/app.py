@@ -1,6 +1,7 @@
 """
 FastAPI application for IVF patient response prediction
 Provides endpoints for model inference with probability outputs
+Version: 2.0 - Fixed for Render deployment
 """
 
 from fastapi import FastAPI, HTTPException
