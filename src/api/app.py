@@ -31,14 +31,29 @@ async def lifespan(app: FastAPI):
     global model, feature_names, scaler
     
     try:
-        project_root = Path(__file__).parent.parent.parent
+        # Get the project root - app.py is at src/api/app.py
+        # So parent.parent gets us to project root
+        current_file = Path(__file__).resolve()
+        api_dir = current_file.parent  # src/api
+        src_dir = api_dir.parent  # src
+        project_root = src_dir.parent  # project root
+        
         models_dir = project_root / "src" / "model" / "saved_models"
         data_dir = project_root / "data" / "processed"
         
+        print(f"Current file: {current_file}")
+        print(f"Project root: {project_root}")
         print(f"Loading model from: {models_dir}")
         print(f"Loading scaler from: {data_dir}")
         
         if not models_dir.exists():
+            # Debug: list what's actually there
+            print(f"Models dir does not exist. Checking parent dirs:")
+            print(f"  api_dir exists: {api_dir.exists()} -> {api_dir}")
+            print(f"  src_dir exists: {src_dir.exists()} -> {src_dir}")
+            print(f"  project_root exists: {project_root.exists()} -> {project_root}")
+            if project_root.exists():
+                print(f"  Contents of project_root: {list(project_root.iterdir())[:10]}")
             raise FileNotFoundError(f"Models directory not found: {models_dir}")
         if not data_dir.exists():
             raise FileNotFoundError(f"Data directory not found: {data_dir}")
