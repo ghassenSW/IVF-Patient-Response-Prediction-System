@@ -151,7 +151,10 @@ class PredictionResponse(BaseModel):
 
 # Mount static files and serve UI FIRST (before other routes)
 ui_dir = Path(__file__).parent.parent / "ui"
+print(f"Checking UI directory: {ui_dir}")
+print(f"UI directory exists: {ui_dir.exists()}")
 if ui_dir.exists():
+    print(f"UI files: {list(ui_dir.iterdir())}")
     app.mount("/static", StaticFiles(directory=str(ui_dir)), name="static")
     
     @app.get("/ui")
@@ -164,13 +167,18 @@ if ui_dir.exists():
         """Serve the web UI at root"""
         return FileResponse(str(ui_dir / "index.html"))
 else:
+    print(f"UI directory NOT FOUND! Falling back to JSON response")
+    print(f"Parent of app.py: {Path(__file__).parent}")
+    print(f"Contents: {list(Path(__file__).parent.parent.iterdir())}")
+    
     @app.get("/")
     async def root():
         """API health check"""
         return {
             "status": "online",
             "message": "IVF Response Prediction API",
-            "version": "1.0.0"
+            "version": "1.0.0",
+            "note": f"UI directory not found at {ui_dir}"
         }
 
 
