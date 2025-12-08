@@ -2,6 +2,14 @@
 
 Machine learning system for predicting ovarian response to IVF treatment based on patient characteristics. Uses probabilistic classification to stratify patients into low, optimal, or high response categories.
 
+## 🌐 Live Demo
+
+**Try the live application**: [https://ivf-patient-response-prediction-system.onrender.com](https://ivf-patient-response-prediction-system.onrender.com)
+
+![Application Screenshot](screenshot.png)
+
+> **Note**: The application may take 30 seconds to wake up on first visit (free tier hosting).
+
 ## Overview
 
 - **Goal**: Predict patient response to ovarian stimulation for treatment optimization
@@ -41,7 +49,13 @@ Machine learning system for predicting ovarian response to IVF treatment based o
     └── test_model.py
 ```
 
-## Setup
+## Quick Start
+
+### Option 1: Use the Live Web Application
+
+Visit **[https://ivf-patient-response-prediction-system.onrender.com](https://ivf-patient-response-prediction-system.onrender.com)** to use the application directly without any setup!
+
+### Option 2: Run Locally
 
 1. **Clone the repository**
 ```bash
@@ -60,10 +74,12 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Install API dependencies** (optional)
+4. **Start the application**
 ```bash
-pip install -r src/api/requirements.txt
+python src/api/app.py
 ```
+
+5. **Open in browser**: http://localhost:8000
 
 ## Usage
 
