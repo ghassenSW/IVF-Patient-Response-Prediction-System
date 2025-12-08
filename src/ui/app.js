@@ -1,5 +1,5 @@
-// API endpoint
-const API_URL = 'http://localhost:8000';
+// API endpoint - use relative path to work on both local and production
+const API_URL = window.location.origin;
 
 // Form submission handler
 document.getElementById('predictionForm').addEventListener('submit', async (e) => {
